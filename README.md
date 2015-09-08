@@ -19,4 +19,5 @@ Therefore `time_format` and `compress` option are not available.
     <match td.test>
       type file_with_fix_path
       path /var/log/hoge.log
+      flush_interval 1s
     </match>

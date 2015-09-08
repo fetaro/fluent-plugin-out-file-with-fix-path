@@ -3,8 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |gem|
   gem.name          = "fluent-plugin-out-file-with-fix-path"
-  gem.version       = "0.0.1"
-  gem.date          = '2014-09-19'
+  gem.version       = "0.1.0"
   gem.authors       = ["fetaro"]
   gem.email         = ["fetaro@gmail.com"]
   gem.summary       = %q{Extention of fluentd out_file plugin }
@@ -13,12 +12,9 @@ Gem::Specification.new do |gem|
   gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($\)
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.require_paths = ["lib"]
 
-  gem.add_development_dependency "rake", '~> 0.9', '>= 0.9.6'
-
-  gem.add_runtime_dependency "fluentd", '~> 0.10', '>= 0.10.51'
+  gem.add_runtime_dependency "fluentd", '>= 0.10.58'
 
 end
