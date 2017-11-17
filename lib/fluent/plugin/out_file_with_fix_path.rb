@@ -4,6 +4,8 @@ module Fluent
     config_param :path, :string
     config_param :format, :string, :default => 'out_file'
 
+    FILE_PERMISSION = 0644
+
     def initialize
       require 'time'
       super
@@ -30,7 +32,7 @@ module Fluent
 
     def write(chunk)
       FileUtils.mkdir_p File.dirname(@path)
-      File.open(@path, "a", DEFAULT_FILE_PERMISSION) do |f|
+      File.open(@path, "a", FILE_PERMISSION) do |f|
         chunk.write_to(f)
       end
     end
